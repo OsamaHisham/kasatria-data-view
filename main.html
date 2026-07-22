@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kasatria | Data View</title>
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body class="data-view">
+  <header class="topbar">
+    <div class="user-chip">
+      <img id="userPicture" alt="Profile photo" referrerpolicy="no-referrer" />
+      <div class="user-chip-text">
+        <span id="userName"></span>
+        <span id="userEmail"></span>
+      </div>
+    </div>
+    <button id="signOut" class="signout-btn" type="button">Sign out</button>
+  </header>
+
+  <div id="container"></div>
+
+  <div id="status">Loading data from the Google Sheet…</div>
+
+  <div id="menu">
+    <button id="table" type="button">TABLE</button>
+    <button id="sphere" type="button">SPHERE</button>
+    <button id="helix" type="button">HELIX</button>
+    <button id="grid" type="button">GRID</button>
+  </div>
+
+  <div id="legend" aria-label="Net worth color scale">
+    <span>LOW</span>
+    <div class="legend-bar" aria-hidden="true"></div>
+    <span>High</span>
+  </div>
+
+  <script src="./js/config.js"></script>
+  <script src="./js/main.js"></script>
+
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+      }
+    }
+  </script>
+  <script type="module" src="./js/periodic.js"></script>
+</body>
+</html>

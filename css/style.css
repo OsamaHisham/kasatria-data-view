@@ -1,0 +1,267 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Roboto, "Segoe UI", Helvetica, Arial, sans-serif;
+  background: #fafafa;
+  color: #3c4043;
+  min-height: 100vh;
+}
+
+/* ---------- Login page (index.html) ---------- */
+
+body:has(.login-card) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-card {
+  width: min(560px, 92vw);
+  background: #fff;
+  border: 1px solid #dadce0;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(60, 64, 67, 0.08);
+  padding: 72px 48px;
+  text-align: center;
+}
+
+.login-card h1 {
+  font-size: 28px;
+  font-weight: 500;
+  color: #5f6368;
+  margin-bottom: 12px;
+}
+
+.subtitle {
+  font-size: 13px;
+  color: #9aa0a6;
+  margin-bottom: 36px;
+}
+
+.google-button {
+  display: flex;
+  justify-content: center;
+  min-height: 44px;
+}
+
+.config-warning {
+  margin-top: 24px;
+  font-size: 13px;
+  color: #d93025;
+}
+
+.config-warning code {
+  background: #f1f3f4;
+  padding: 1px 5px;
+  border-radius: 4px;
+}
+
+.hidden {
+  display: none;
+}
+
+/* ---------- Periodic table page (main.html) ---------- */
+
+body.data-view {
+  background: #000;
+  color: #fff;
+  overflow: hidden;
+}
+
+body.data-view .topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background: rgba(0, 0, 0, 0.82);
+  border-bottom: 1px solid rgba(127, 255, 255, 0.25);
+  backdrop-filter: blur(4px);
+}
+
+.user-chip {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.user-chip img {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid rgba(127, 255, 255, 0.4);
+}
+
+.user-chip-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-chip-text #userName {
+  font-size: 14px;
+  font-weight: 500;
+  color: #fff;
+}
+
+.user-chip-text #userEmail {
+  font-size: 12px;
+  color: #9aa0a6;
+}
+
+.signout-btn {
+  font: inherit;
+  font-size: 14px;
+  color: rgba(127, 255, 255, 0.9);
+  background: transparent;
+  border: 1px solid rgba(127, 255, 255, 0.4);
+  border-radius: 4px;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+.signout-btn:hover {
+  background: rgba(0, 255, 255, 0.15);
+}
+
+#container {
+  position: fixed;
+  inset: 0;
+}
+
+#status {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 15;
+  padding: 0 32px;
+  text-align: center;
+  color: rgba(127, 255, 255, 0.85);
+  font-size: 15px;
+  pointer-events: none;
+}
+
+#menu {
+  position: fixed;
+  bottom: 24px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  z-index: 10;
+}
+
+#menu button {
+  color: rgba(127, 255, 255, 0.75);
+  background: transparent;
+  outline: 1px solid rgba(127, 255, 255, 0.75);
+  border: 0;
+  padding: 6px 14px;
+  margin: 0 4px;
+  font-size: 14px;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+#menu button:hover {
+  background-color: rgba(0, 255, 255, 0.5);
+}
+
+#menu button:active {
+  color: #000;
+  background-color: rgba(0, 255, 255, 0.75);
+}
+
+/* ---------- Person tiles (structure per Image B, color per step 5) ---------- */
+
+/* --tile-color is an "R, G, B" triplet set per tile from its net worth. */
+.element {
+  width: 120px;
+  height: 160px;
+  padding: 6px;
+  text-align: center;
+  background-color: rgba(var(--tile-color), 0.22);
+  border: 1px solid rgba(var(--tile-color), 0.85);
+  border-radius: 6px;
+  box-shadow: 0 0 14px rgba(var(--tile-color), 0.5);
+  font-family: Helvetica, sans-serif;
+  cursor: default;
+}
+
+.element:hover {
+  background-color: rgba(var(--tile-color), 0.35);
+  box-shadow: 0 0 20px rgba(var(--tile-color), 0.9);
+}
+
+.tile-top {
+  display: flex;
+  justify-content: space-between;
+  font-size: 9px;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.tile-photo {
+  display: block;
+  width: 74px;
+  height: 74px;
+  margin: 4px auto 6px;
+  border-radius: 3px;
+  object-fit: cover;
+}
+
+.tile-name {
+  font-size: 10px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.2;
+  max-height: 24px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.tile-interest {
+  margin-top: 3px;
+  font-size: 9px;
+  color: rgba(255, 255, 255, 0.8);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* ---------- Net worth legend (bottom-right, per Image B) ---------- */
+
+#legend {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: #fff;
+}
+
+.legend-bar {
+  width: 160px;
+  height: 12px;
+  background: linear-gradient(to right, #ef3022, #fdca35, #3a9f48);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+@media (max-width: 760px) {
+  #legend {
+    display: none;
+  }
+}

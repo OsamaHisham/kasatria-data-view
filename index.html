@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kasatria | Sign In</title>
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+  <main class="login-card">
+    <h1>Welcome Back</h1>
+    <p class="subtitle">Sign in with your Google account to explore the 3D interactive customer table.</p>
+
+    <div id="googleButton" class="google-button"></div>
+
+    <p id="configWarning" class="config-warning hidden">
+      Google Sign-In is temporarily unavailable <br> Please try again later.
+    </p>
+  </main>
+
+  <script src="./js/config.js"></script>
+  <script src="./js/auth.js"></script>
+  <script src="https://accounts.google.com/gsi/client" onload="initGoogleSignIn()" async defer>
+  </script>
+</body>
+</html>
